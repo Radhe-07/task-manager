@@ -5,6 +5,10 @@ Users can create, edit, mark tasks as complete, and delete them.
 
 The project is structured as a single repository with separate frontend and backend folders.
 
+## Live At
+
+https://task-manager-radhe.netlify.app/
+
 ---
 
 ## Tech Stack
