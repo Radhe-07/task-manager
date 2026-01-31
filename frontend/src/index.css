@@ -1,0 +1,271 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f0f2f8;
+}
+
+.app {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px 40px;
+}
+
+.app-title {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.9rem;
+}
+
+/* Layout */
+.layout {
+  display: flex;
+  gap: 24px;
+}
+
+/* Left */
+.left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Right */
+.right-side {
+  flex: 1;
+}
+
+/* -------------------- TASK INFO CARD -------------------- */
+
+.task-card {
+  background: #2f3d70;
+  color: #ffffff;
+  border-radius: 18px;
+  padding: 28px 30px;
+  box-shadow: 0 12px 22px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task-title {
+  margin: 0 0 12px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.task-text {
+  margin: 0;
+  font-size: 0.92rem;
+  opacity: 0.9;
+  max-width: 80%;
+  line-height: 1.6;
+}
+
+/* -------------------- FORM CARD -------------------- */
+
+.form-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #d2d5e3;
+  padding: 22px 26px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+}
+
+.form-heading {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input,
+.textarea {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #c5c9dd;
+  background: #ffffff;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.btn {
+  padding: 7px 16px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: #2f3d70;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-light {
+  background: white;
+  border: 1px solid #c5c9dd;
+}
+
+/* -------------------- TASK LIST -------------------- */
+
+.tasks-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #d2d5e3;
+  padding: 26px 28px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+}
+
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.tasks-title {
+  margin: 0;
+}
+
+.tasks-count {
+  background: #2f3d70;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* -------------------- TASK ITEM -------------------- */
+
+.task-item {
+  background: #f7f7ff;
+  border: 1px solid #e3e5f2;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+
+.task-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.task-name {
+  font-weight: 600;
+  color: #2f3d70;
+}
+
+.task-meta {
+  font-size: 0.78rem;
+  color: #888bb0;
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.task-description {
+  margin: 0 0 12px;
+  padding-right: 40px;
+  font-size: 0.95rem;
+  color: #2d2f40;
+  text-align: left;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.btn-small {
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  background: transparent;
+  color: #2f3d70;
+  border: 1px solid #2f3d70;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-danger {
+  border-color: #ff4a4a;
+  color: #ff4a4a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+}
+
+
+.task-item {
+  position: relative; /* REQUIRED for delete icon */
+  background: #f7f7ff;
+  border: 1px solid #e3e5f2;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+
+/* top-right delete cross */
+.task-delete {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: #9aa0c3;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.task-delete:hover {
+  color: #ff4a4a;
+}
+
+/* completed task */
+.task-complete {
+  background: #e6f6ea;
+  border-color: #7acb8b;
+}
+
+.task-complete .task-name {
+  text-decoration: line-through;
+  color: #2f6b3f;
+}
+
+/* success button */
+.btn-success {
+  background: #2e9d5b;
+  color: #ffffff;
+  border-color: #2e9d5b;
+}
+
+.btn-success:hover {
+  background: #248a4e;
+  border-color: #248a4e;
+}
+
